@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اختبار اتصال Supabase</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>اختبار اتصال Supabase</h1>
+    <div id="result"></div>
+    
+    <script>
+        // استبدل هذه بالمعلومات الصحيحة من مشروعك
+        const supabaseUrl = 'https://yyjjzaoqoxjzgczmleng.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5amp6YW9xb3hqemdjem1sZW5nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5OTQ5MDAsImV4cCI6MjA3MTU3MDkwMH0.litRFbIqhTO0MkfilJqhkxV42MujKHn_B8MuewccFpc';
+        
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        const resultDiv = document.getElementById('result');
+
+        async function testConnection() {
+            try {
+                resultDiv.innerHTML = 'جاري اختبار الاتصال...';
+                
+                // اختبار جلب بيانات من جدول المحطات
+                const { data, error } = await supabase
+                    .from('stations')
+                    .select('*')
+                    .limit(1);
+
+                if (error) {
+                    resultDiv.innerHTML = `خطأ في الاتصال: ${error.message}`;
+                    console.error('Error details:', error);
+                } else {
+                    resultDiv.innerHTML = `✅ الاتصال ناجح! تم العثور على ${data.length} محطة`;
+                    console.log('Data:', data);
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `خطأ غير متوقع: ${error.message}`;
+                console.error('Unexpected error:', error);
+            }
+        }
+
+        testConnection();
+    </script>
+</body>
+</html>

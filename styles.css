@@ -1,0 +1,271 @@
+/* تنسيقات عامة */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيقات تسجيل الدخول */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.login-card {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.login-card .card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* تنسيقات الرأس */
+header {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+}
+
+.header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* تنسيقات التبويبات */
+.nav-tabs {
+    border-bottom: 2px solid #0d6efd;
+}
+
+.nav-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-tabs .nav-link.active {
+    color: #0d6efd;
+    background-color: transparent;
+    border-bottom: 3px solid #0d6efd;
+}
+
+/* تنسيقات البطاقات */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+/* تنسيقات حقول الإدخال */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.form-label.required::after {
+    content: " *";
+    color: #dc3545;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* تنسيقات الأزرار */
+.btn {
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    border: none;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #198754, #146c43);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #b02a37);
+    border: none;
+}
+
+.btn-purple {
+    background: linear-gradient(135deg, #6f42c1, #5a36a9);
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* تنسيقات البطاقات التفاعلية */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* تنسيقات القيم المحسوبة */
+.calculated-value {
+    background-color: #e9ecef;
+    padding: 0.75rem;
+    border-radius: 5px;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* تنسيقات أزرار التحكم */
+.control-buttons {
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* تنسيقات الرسوم المتحركة */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تنسيقات خاصة بالسحب */
+.cloud-description {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+/* تنسيقات القسم اليومي */
+.section-title {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* تنسيقات متجاوبة */
+@media (max-width: 768px) {
+    .header-logos {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-logos .logo {
+        margin: 0.5rem 0;
+    }
+    
+    .control-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .control-buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* تنسيقات خاصة للوضع الليلي */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #212529;
+        color: #f8f9fa;
+    }
+    
+    .card {
+        background-color: #343a40;
+        color: #f8f9fa;
+    }
+    
+    .card-header {
+        background-color: #495057 !important;
+        color: #f8f9fa;
+    }
+    
+    .form-control, .form-select {
+        background-color: #495057;
+        border-color: #6c757d;
+        color: #f8f9fa;
+    }
+    
+    .form-control:focus, .form-select:focus {
+        background-color: #495057;
+        color: #f8f9fa;
+    }
+    
+    .calculated-value {
+        background-color: #495057;
+        color: #f8f9fa;
+    }
+}
